@@ -1,0 +1,10 @@
+venv/
+__pycache__/
+*.pyc
+*.log
+linklet.log
+postgres_data/
+.idea/
+.vscode/
+.env
+*.env

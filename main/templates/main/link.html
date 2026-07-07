@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+
+{% block title %}LinkLet{% endblock %}
+
+{% block content %}
+<div class="result-container">
+    <div class="result-card">
+        <h2 class="logo-text">Удобный сокращатель ссылок с аналитикой</h2>
+        <p class="screen-text">Преврати длинный URL в короткий. Отслеживай количество переходов и управляй ссылками без лишних сложностей.</p>
+
+        <form action="{% url 'add_url' %}" method="post">
+            {% csrf_token %}
+            <div class="form-row">
+                <span class="form-url">{{ form.as_p }}</span>
+                <button type="submit" class="btn btn-primary">Сократить ссылку</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

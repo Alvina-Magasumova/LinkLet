@@ -1,0 +1,181 @@
+/* Основной фон страницы и шрифт */
+body {
+    background: linear-gradient(135deg, #eff2f7 0%, #e0e7f0 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* Контейнер хедера — отступы от краёв */
+.header {
+    padding-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+/* Текст логотипа LinkLet — градиентный, со сдвигом вниз */
+.logo {
+    font-size: 32px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #1a2b4d, #2c3e66);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    top: 10px;
+}
+/* Круглая картинка логотипа */
+.rounded-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Карточка с формой — белая, с тенью и скруглением */
+.result-card {
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 800px;
+}
+/* Заголовок "Удобный сокращатель ссылок" */
+.logo-text {
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 16px;
+    text-align: center;
+    background: linear-gradient(135deg, #1a2b4d, #2c3e66);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+/* Подзаголовок — описание сервиса */
+.screen-text {
+    color: #5a6e8a;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+/* Поле ввода ссылки — ширина, отступы, рамка */
+.form-row input {
+    width: 100% !important;
+    padding: 14px 18px !important;
+    border-radius: 12px;
+    border: 2px solid #e0e7f0;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+/* Поле ввода при фокусе (когда нажали на него) */
+.form-row input:focus {
+    outline: none;
+    border-color: #0066cc;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+/* Кнопка "Сократить ссылку" */
+.btn-primary {
+    background: linear-gradient(135deg, #0066cc, #0052a3);
+    border: none;
+    padding: 12px 28px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+/* Кнопка при наведении мыши — тень и затемнение */
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0052a3, #004080);
+    box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
+}
+/* Плавное появление карточки при загрузке страницы */
+.result-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+/* Сама анимация: из прозрачности и сдвига вверх — в нормальное состояние */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Контейнер страницы результата — центрирование по вертикали */
+.result-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    padding: 20px;
+}
+/* Заголовок "Ваша короткая ссылка готова!" */
+.result-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #333;
+}
+/* Карточка результата — белая, с тенью */
+.result-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+}
+/* Строка с меткой и значением (например, "Оригинальная ссылка: ...") */
+.result-row {
+    display: flex;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+/* Метка (левая часть строки) — жирная, фиксированной ширины */
+.result-label {
+    font-weight: bold;
+    width: 130px;
+    flex-shrink: 0;
+    color: #555;
+}
+/* Значение (правая часть строки) — перенос длинных URL */
+.result-url {
+    color: #666;
+    word-break: break-all;
+}
+/* Обёртка короткой ссылки — занимает оставшееся место */
+.short-link-wrapper {
+    flex: 1;
+}
+/* Сама короткая ссылка — как кнопка с иконкой */
+.short-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #f0f7ff;
+    padding: 8px 16px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+/* Короткая ссылка при наведении — фон синий, текст белый */
+.short-link:hover {
+    background: #0066cc;
+    color: white;
+}
+/* Иконка внутри ссылки — плавный поворот */
+.link-icon {
+    transition: transform 0.2s ease;
+}
+/* Иконка при наведении на ссылку — поворот на 15 градусов */
+.short-link:hover .link-icon {
+    transform: rotate(15deg);
+}
+/* Кнопка "Создать новую ссылку" — по центру, с отступом */
+.result-actions {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
